@@ -263,7 +263,7 @@ layout: false
 
 1. Proceed with caution (sometimes you can sign the bias).
 
-2. The key is to have a mental map of *should* belong to the model. 
+2. The key is to have a mental map of *should* belong to the model—this is when the economics comes in. 
 
 
 
@@ -295,7 +295,7 @@ where
 # Interpreting coefficients
 **Interpretations**
 
-- `\(\beta_0\)`: the `\(y\)`-intercept, _i.e._, `\(\text{Pay}\)` when `\(\text{School} = 0\)`
+- `\(\beta_0\)`: the `\(y\)`-intercept, _i.e._, the expected `\(\text{Pay}\)` when `\(\text{School} = 0\)`
 - `\(\beta_1\)`: the expected increase in `\(\text{Pay}\)` for a one-unit increase in `\(\text{School}\)`
 
 ---
@@ -352,8 +352,8 @@ Derivations
 $$
 `\begin{aligned}
  \mathop{\boldsymbol{E}}\left[ \text{Pay} | \text{Male} \right] &amp;=
- \mathop{\boldsymbol{E}}\left[ \beta_0 + \beta_1\times 0 + u_i \right] \\
- &amp;= \mathop{\boldsymbol{E}}\left[ \beta_0 + 0 + u_i \right] \\
+ \mathop{\boldsymbol{E}}\left[ \beta_0 + \beta_1\times 0 + u_i \right | \text{Male}] \\
+ &amp;= \mathop{\boldsymbol{E}}\left[ \beta_0 + 0 + u_i | \text{Male} \right] \\
  &amp;= \beta_0
 \end{aligned}`
 $$
@@ -363,15 +363,15 @@ $$
 $$
 `\begin{aligned}
  \mathop{\boldsymbol{E}}\left[ \text{Pay} | \text{Female} \right] &amp;=
- \mathop{\boldsymbol{E}}\left[ \beta_0 + \beta_1\times 1 + u_i \right] \\
- &amp;= \mathop{\boldsymbol{E}}\left[ \beta_0 + \beta_1 + u_i \right] \\
+ \mathop{\boldsymbol{E}}\left[ \beta_0 + \beta_1\times 1 + u_i | \text{Female} \right] \\
+ &amp;= \mathop{\boldsymbol{E}}\left[ \beta_0 + \beta_1 + u_i | \text{Female} \right] \\
  &amp;= \beta_0 + \beta_1
 \end{aligned}`
 $$
 
 --
 
-**Note:** If there are no other variables to condition on, then `\(\hat{\beta}_1\)` equals the difference in group means, _e.g._, `\(\overline{x}_\text{Female} - \overline{x}_\text{Male}\)`.
+**Note:** If there are no other variables to condition on, then `\(\hat{\beta}_1\)` equals the difference in group means, _e.g._, `\(\overline{Pay}_\text{Female} - \overline{Pay}_\text{Male}\)`.
 
 --
 
