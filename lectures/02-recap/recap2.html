@@ -891,7 +891,7 @@ $$ \hat{\beta}\_1 \pm t\_{\alpha/2,\text{df}} \, \mathop{\hat{\text{SE}}} \left(
 
 ---
 
-`\(t_{\alpha/2,\text{df}}\)` denotes the `\(\alpha/2\)` quantile of a `\(t\)` dist. with `\(n-k\)` degrees of freedom.
+`\(t_{\alpha/2,\text{df}}\)` denotes the `\(\alpha/2\)` quantile of a `\(t\)` dist. with df=`\(n-k\)` degrees of freedom.
 
 ---
 
@@ -1001,13 +1001,13 @@ While uncertainty certainly exists, we can still build *reliable* statistical te
 
 --
 
-.hi-slate[OLS *t* test] Our (null) hypothesis states that `\(\beta_1\)` equals a value `\(c\)`, _i.e._, `\(H_o:\: \beta_1 = c\)`
+.hi-slate[OLS *t* test] Our (null) hypothesis states that `\(\beta_1\)` equals a value `\(c\)`, _i.e._, `\(H_0:\: \beta_1 = c\)`
 
 From OLS's properties, we can show that the test statistic
 
 $$ t_\text{stat} = \dfrac{\hat{\beta}_1 - c}{\mathop{\hat{\text{SE}}} \left( \hat{\beta}_1 \right)} $$
 
-follows the `\(t\)` distribution with `\(n-k\)` degrees of freedom.
+follows the `\(t\)` distribution with `\(n-k\)` degrees of freedom, under `\(H_0\)`.
 
 ---
 
@@ -1039,7 +1039,7 @@ lm(y ~ x, data = pop_df) %&gt;% tidy()
 ```
 --
 
-H.sub[o]: `\(\beta_1 = 0\)` *vs.* H.sub[a]: `\(\beta_1 \neq 0\)`
+H.sub[0]: `\(\beta_1 = 0\)` *vs.* H.sub[1]: `\(\beta_1 \neq 0\)`
 
 --
 
@@ -1049,7 +1049,7 @@ H.sub[o]: `\(\beta_1 = 0\)` *vs.* H.sub[a]: `\(\beta_1 \neq 0\)`
 
 --
 
-Therefore, we .hi[reject H.sub[o]].
+Therefore, we .hi[reject H.sub[0]].
 
 ---
 layout: true
@@ -1081,7 +1081,7 @@ $$ \text{Consumption}\_i = \beta\_0 + \beta\_1 \text{Income}\_{i} + \beta\_2 \te
 
 We can write our null hypothesis as
 
-$$ H_o:\: \beta_1 = \beta_2 \iff H_o :\: \beta_1 - \beta_2 = 0 $$
+$$ H_o:\: \beta_1 = \beta_2 \iff H_0 :\: \beta_1 - \beta_2 = 0 $$
 
 Imposing this null hypothesis gives us the **restricted model**
 
@@ -1092,7 +1092,7 @@ $$ \text{Consumption}\_i = \beta\_0 + \beta\_1 \left( \text{Income}\_{i} + \text
 
 **Example, continued**
 
-To this the null hypothesis `\(H_o :\: \beta_1 = \beta_2\)` against `\(H_a :\: \beta_1 \neq \beta_2\)`,
+To this the null hypothesis `\(H_0 :\: \beta_1 = \beta_2\)` against `\(H_1 :\: \beta_1 \neq \beta_2\)`,
 &lt;br&gt;we use the `\(F\)` statistic
 $$
 `\begin{align}
@@ -1101,7 +1101,7 @@ $$
 $$
 which (as its name suggests) follows the `\(F\)` distribution with `\(q\)` numerator degrees of freedom and `\(n-k-1\)` denominator degrees of freedom.
 
-Here, `\(q\)` is the number of restrictions we impose via `\(H_o\)`.
+Here, `\(q\)` is the number of restrictions we impose via `\(H_0\)`.
 
 ---
 
@@ -1128,8 +1128,8 @@ background-position: 9% 19%
 
 |                                                                                                            |                                   |
 | :--------------------------------------------------------------------------------------------------------- | :-------------------------------- |
-| &lt;a href="mailto:florian.oswald@sciencespo.fr"&gt;.ScPored[&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;]               | florian.oswald@sciencespo.fr       |
-| &lt;a href="https://github.com/ScPoEcon/Advanced-Metrics-slides"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Slides |
+| &lt;a href="mailto:facundo.arganaraz@sciencespo.fr"&gt;.ScPored[&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;]               | facundo.arganaraz@sciencespo.fr       |
+| &lt;a href="https://github.com/argafacu/Advanced-Metrics-slides"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Slides |
 | &lt;a href="https://scpoecon.github.io/ScPoEconometrics"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Book |
 | &lt;a href="http://twitter.com/ScPoEcon"&gt;.ScPored[&lt;i class="fa fa-twitter fa-fw"&gt;&lt;/i&gt;]                          | @ScPoEcon                         |
 | &lt;a href="http://github.com/ScPoEcon"&gt;.ScPored[&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;]                          | @ScPoEcon                       |
