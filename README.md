@@ -24,7 +24,7 @@ Lecture 2: Recap 2 from intro course. What's a *model*, omitted variable bias, i
 
 Lecture 3: intro to the `data.table` package [[HTML](https://raw.githack.com/argafacu/Advanced-Metrics-slides/master/lectures/03-datatable/03-datatable.html)]
 
-Lecture 4: Instrumental Variables and Causality 1. John Snow's Cholera Experiment as a motivation for the IV estimator, using a DAG to think about the exclusion restriction, the Wald estimator. [[HTML](https://raw.githack.com/ScPoEcon/Advanced-Metrics-slides/master/lectures/04-IV/04-IV.html)]
+Lecture 4: Instrumental Variables and Causality 1. John Snow's Cholera Experiment as a motivation for the IV estimator, using a DAG to think about the exclusion restriction, the Wald estimator. [[HTML](https://raw.githack.com/argafacu/Advanced-Metrics-slides/master/lectures/04-IV/04-IV.html)]
 
 Lecture 5: Instrumental Variables and Causality 2. 2SLS, returns to schooling and ability bias, replicating Angrist and Krueger (1991), IV mechanics, identification and inference, weak instruments [[HTML](https://raw.githack.com/ScPoEcon/Advanced-Metrics-slides/master/lectures/05-IV2/05-IV2.html)]
 
