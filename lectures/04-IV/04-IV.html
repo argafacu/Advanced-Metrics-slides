@@ -53,13 +53,15 @@ layout: true
 
 .pull-left[
 
-## What Did we Do Last Week?
+## What Did we Do in the Last Weeks?
 
-* We introduced the DiD method.
+* We revised the population vs. sample idea.
 
-* We looked at the case minimum wages in NJ/Pennsylvania.
+* We reviewed the OLS estimator and its basic properties.
 
-* We highlighted some drawbacks of the method and learned the underlying assumptions.
+* We worked with the multivariate model. 
+
+* We discussed uncetratinty, stantard errors, and testing.
 
 ]
 
@@ -304,7 +306,7 @@ cholera::snowMap()
 * Snow collected the following data: 
 
 
-|area                   | numhouses| deaths| death1000|
+|area                   | numhouses| deaths| death10000|
 |:----------------------|---------:|------:|---------:|
 |Southwark and Vauxhall |     40046|   1263|       315|
 |Lambeth                |     26107|     98|        37|
@@ -339,7 +341,7 @@ layout: true
 
 * Suppose that `\(c_i\)` takes the value 1 if individual `\(i\)` dies of cholera, 0 else.
 
-* Let `\(w_i = 1\)` mean that `\(i\)`'s water supply is impure and `\(w_i = 0\)` vice versa. Water purity is assessed with a technology that cannot detect small microbes.
+* Let `\(w_i = 1\)` mean that `\(i\)`'s water supply is impure and `\(w_i = 0\)` otherwise. Water purity is assessed with a technology that cannot detect small microbes.
 
 * Collect in `\(u_i\)` all unobservable factors that impact `\(i\)`'s likelihood of dying from the disease: whether `\(i\)` is poor, where exactly they reside, whether there is bad air quality in `\(i\)`'s surrounding, and other invidivual characteristics which impact the outcome (like genetic setup of `\(i\)`).
 
@@ -388,7 +390,7 @@ Note quite. Angus Deaton says:
 
 * Another way to say this, is that `\(Cov(w_i, u_i) \neq 0\)`, implying that `\(w_i\)` is *endogenous*. 
 
-* There are factors in `\(u_i\)` that affect both `\(w_i\)` and `\(c_i\)`
+* There are factors in `\(u_i\)` that affect both `\(w_i\)` and `\(c_i\)`.
 
 ---
 
@@ -559,8 +561,8 @@ background-position: 9% 19%
 
 |                                                                                                            |                                   |
 | :--------------------------------------------------------------------------------------------------------- | :-------------------------------- |
-| &lt;a href="mailto:florian.oswald@sciencespo.fr"&gt;.ScPored[&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;]               | florian.oswald@sciencespo.fr       |
-| &lt;a href="https://github.com/ScPoEcon/Advanced-Metrics-slides"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Slides |
+| &lt;a href="mailto:facundo.arganaraz@sciencespo.fr"&gt;.ScPored[&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;]               | facundo.arganaraz@sciencespo.fr       |
+| &lt;a href="https://github.com/argafacu/Advanced-Metrics-slides"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Slides |
 | &lt;a href="https://scpoecon.github.io/ScPoEconometrics"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Book |
 | &lt;a href="http://twitter.com/ScPoEcon"&gt;.ScPored[&lt;i class="fa fa-twitter fa-fw"&gt;&lt;/i&gt;]                          | @ScPoEcon                         |
 | &lt;a href="http://github.com/ScPoEcon"&gt;.ScPored[&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;]                          | @ScPoEcon                       |
