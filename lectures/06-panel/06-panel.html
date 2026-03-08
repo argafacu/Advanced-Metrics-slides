@@ -634,7 +634,7 @@ background-size: 300px
 background-position: 20% 99%
 
 
-# The Within Transformation (the within estimator)
+# The Within Transformation (the within-group estimator)
 
 .pull-left[
 * With `\(T&gt;2\)` we need a different approach
@@ -763,7 +763,7 @@ We get this table:
 mod$FE = fixest::feols(crmrte ~ prbarr | county, cdata)
 ```
 
-* Notice the similar setup to the `estimatr::iv_robust` *two-part formula*. Here the fixed effects come after the `|`. 
+* Notice that the first-diff, the within-group, and the fixed effects estimators are numerically equivalent.
 
 * Also, we can have *more than one fixed effect*! For a cool example with *three* fixed effects see the package [vignette](https://cran.r-project.org/web/packages/fixest/vignettes/fixest_walkthrough.html)
 
