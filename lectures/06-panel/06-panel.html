@@ -337,7 +337,7 @@ coef(xsection)[2]  # gets slope coef
 
 
 
-* Increasing probability of arrest by 1 unit (i.e. 100 percentage point), increases the crime rate by 0.064801. So, if we double the probability of arrest, crime would increase by 0.064 crimes per person.
+* Increasing probability of arrest by 1 unit (i.e. 100 percentage change), increases the crime rate by 0.064801. So, if we double the probability of arrest, crime would increase by 0.064 crimes per person.
 
 * Increase of 10 percentage points in the probability of arrest (e.g. `prbarr` goes from 0.2 to 0.3) ...
 
@@ -417,7 +417,7 @@ You will often hear the terms *within* and *between* variation in panel data con
 
 ## Within Variation
 
-* things that change *within each group* over time: 
+* things that change *within each unit (e.g., country)* over time: 
 
 * here we said police budgets
 
@@ -429,7 +429,7 @@ You will often hear the terms *within* and *between* variation in panel data con
 
 ## Between Variation
 
-* Things that are **fixed** for each group over time:
+* Things that are **fixed** for each unit over time:
 
 * `LocalStuff`
 
@@ -456,7 +456,7 @@ background-size: 300px
 
 ---
 
-# Pooled OLS recovers *between* variation
+# OLS using *between* variation (the between estimator)
 
 
 
@@ -484,7 +484,7 @@ background-size: 300px
 
 * Takes care of all factors which do *not* vary over time within each unit. 
 
-* We can **net out** the group effect!
+* We **account for** the unit-specific effect!
 
 * We call `County` a **fixed effect**.
 
@@ -533,7 +533,17 @@ if `\(c_i\)` unobservable and `\(Cov(x_i,c_i)\neq0 \Rightarrow E[u_i+c_i|x_i]\ne
 * `\(c_i\)`: is fixed over time (ability `\(A_i\)` for example), but can be correlated with `\(x_{it}\)`!
 ]
 
+---
+# Two different approaches in Panel Data 
 
+`\(c_i\)` is a time-invariant random variable, as such it has some distribution `\(F_c\)`.
+
+**Random Effects (RE):** Some approaches make assumptions about `\(F_c\)` (e.g., `\(F_c\)` is standard normal, `\(c_i\)` is uncorrelated with `\(x_i\)`, etc.).
+
+**Fixed Effects (FE):** No assumptions are imposed on `\(F_c\)`.
+
+*Trade-off:* When parametric assumptions are true, RE is in general more efficient than FE. Yet, when these do not hold, while RE is no consistent, FE still works.
+      
 
 ---
 
@@ -601,6 +611,8 @@ broom::tidy(mod$dummy)
 
 # First Differencing Solution
 
+Some people prefer accounting for `\(c_i\)` indirectly by partialling it out before estimation.
+
 If we only had `\(T=2\)` periods, we could just difference both periods, basically leaving us with
     
 `$$\begin{align}y_{i1} &amp;= \beta_1 x_{i1} + c_i + u_{i1} \\y_{i2} &amp;= \beta_1 x_{i2} + c_i + u_{i2} \\&amp; \Rightarrow \\
@@ -612,7 +624,8 @@ where `\(\Delta\)` means *difference over time of* and to recover the parameter 
 ```r
 lm(deltay ~ deltax, diff_data) 
 ```
-    
+Notice that the interpretation of `\(\beta_1\)` does not change, as both models share the same slope. Hence, the estimated coefficient from the model in differences can still be interpreted as it were coming from the model in levels.
+      
     
     
 ---
@@ -621,7 +634,7 @@ background-size: 300px
 background-position: 20% 99%
 
 
-# The Within Transformation
+# The Within Transformation (the within estimator)
 
 .pull-left[
 * With `\(T&gt;2\)` we need a different approach
@@ -642,7 +655,9 @@ background-position: 20% 99%
 
 1. for all variables compute their time-mean for each unit `\(i\)`: `\(\bar{x}_i,\bar{y}_i\)` etc
 1. for each observation, substract that time mean from the actual value and define `\((x_{it} - \bar{x}_i),(y_{it}-\bar{y}_i)\)`
-1. Finally, regress `\((x_{it} - \bar{x}_i)\)` on `\((y_{it}-\bar{y}_i)\)`
+1. Finally, regress `\((x_{it} - \bar{x}_i)\)` on `\((y_{it}-\bar{y}_i)\)`.
+
+**Note that you lose observed variables that do not change with time.**
 
 ]
 
@@ -727,7 +742,7 @@ We get this table:
 
 * We look at a single unit `\(i\)` and ask: 
 
-&gt; if the arrest probability in `\(i\)` increases by 10 percentage points (i.e. from 0.2 to 0.3) from year `\(t\)` to `\(t+1\)`, we expect crimes per person to fall from 0.039 to 0.036, or by -7.69 percent (in the reference county number 1).
+&gt; If unit `\(i\)`'s value of `\(x\)` in period `\(t\)` is one unit above that unit's own average, how much higher do we expect `\(y\)` to be compared to that unit's own average?
 
 &lt;img src="06-panel_files/figure-html/unnamed-chunk-15-1.svg" style="display: block; margin: auto;" /&gt;
 
@@ -826,8 +841,8 @@ background-position: 9% 19%
 
 |                                                                                                            |                                   |
 | :--------------------------------------------------------------------------------------------------------- | :-------------------------------- |
-| &lt;a href="mailto:florian.oswald@sciencespo.fr"&gt;.ScPored[&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;]               | florian.oswald@sciencespo.fr       |
-| &lt;a href="https://github.com/ScPoEcon/Advanced-Metrics-slides"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Slides |
+| &lt;a href="mailto:facundo.arganaraz@sciencespo.fr"&gt;.ScPored[&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;]               | facundo.arganaraz@sciencespo.fr       |
+| &lt;a href="https://github.com/argafacu/Advanced-Metrics-slides"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Slides |
 | &lt;a href="https://scpoecon.github.io/ScPoEconometrics"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Book |
 | &lt;a href="http://twitter.com/ScPoEcon"&gt;.ScPored[&lt;i class="fa fa-twitter fa-fw"&gt;&lt;/i&gt;]                          | @ScPoEcon                         |
 | &lt;a href="http://github.com/ScPoEcon"&gt;.ScPored[&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;]                          | @ScPoEcon                       |
