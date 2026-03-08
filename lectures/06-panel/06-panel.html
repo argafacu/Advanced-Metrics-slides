@@ -542,7 +542,7 @@ if `\(c_i\)` unobservable and `\(Cov(x_i,c_i)\neq0 \Rightarrow E[u_i+c_i|x_i]\ne
 
 **Fixed Effects (FE):** No assumptions are imposed on `\(F_c\)`.
 
-*Trade-off:* When parametric assumptions are true, RE is in general more efficient than FE. Yet, when these do not hold, while RE is no consistent, FE still works.
+*Trade-off:* When parametric assumptions are true, RE is in general more efficient than FE. Yet, when these do not hold, while RE is not consistent, FE still works.
       
 
 ---
@@ -624,7 +624,7 @@ where `\(\Delta\)` means *difference over time of* and to recover the parameter 
 ```r
 lm(deltay ~ deltax, diff_data) 
 ```
-Notice that the interpretation of `\(\beta_1\)` does not change, as both models share the same slope. Hence, the estimated coefficient from the model in differences can still be interpreted as it were coming from the model in levels.
+Notice that the interpretation of `\(\beta_1\)` does not change, as both models share the same slope. 
       
     
     
