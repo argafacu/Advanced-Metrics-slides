@@ -28,7 +28,7 @@ Lecture 4: Instrumental Variables and Causality 1. John Snow's Cholera Experimen
 
 Lecture 5: Instrumental Variables and Causality 2. 2SLS, returns to schooling and ability bias, replicating Angrist and Krueger (1991), IV mechanics, identification and inference, weak instruments [[HTML](https://raw.githack.com/argafacu/Advanced-Metrics-slides/master/lectures/05-IV2/05-IV2.html)]
 
-Lecture 6: Panel Data 1: What, How and Why? Application to crime rates at county level, within and between variation, the within transformation, running panel regressions in R [[HTML](https://raw.githack.com/ScPoEcon/Advanced-Metrics-slides/master/lectures/06-panel/06-panel.html)]
+Lecture 6: Panel Data 1: What, How and Why? Application to crime rates at county level, within and between variation, the within transformation, running panel regressions in R [[HTML](https://raw.githack.com/argafacu/Advanced-Metrics-slides/master/lectures/06-panel/06-panel.html)]
 
 Lecture 7: Discrete Outcomes: Logit and Probit. Bernoulli reminder, Mroz dataset, the linear probability model, the saturated LPM, logit and probit marginal effects, Goodness of fit in non-linear binary response models. [[HTML](https://raw.githack.com/ScPoEcon/Advanced-Metrics-slides/master/lectures/07-probit/07-probit.html)]
 
