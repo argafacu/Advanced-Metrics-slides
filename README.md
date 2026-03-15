@@ -30,7 +30,7 @@ Lecture 5: Instrumental Variables and Causality 2. 2SLS, returns to schooling an
 
 Lecture 6: Panel Data 1: What, How and Why? Application to crime rates at county level, within and between variation, the within transformation, running panel regressions in R [[HTML](https://raw.githack.com/argafacu/Advanced-Metrics-slides/master/lectures/06-panel/06-panel.html)]
 
-Lecture 7: Discrete Outcomes: Logit and Probit. Bernoulli reminder, Mroz dataset, the linear probability model, the saturated LPM, logit and probit marginal effects, Goodness of fit in non-linear binary response models. [[HTML](https://raw.githack.com/ScPoEcon/Advanced-Metrics-slides/master/lectures/07-probit/07-probit.html)]
+Lecture 7: Discrete Outcomes: Logit and Probit. Bernoulli reminder, Mroz dataset, the linear probability model, the saturated LPM, logit and probit marginal effects, Goodness of fit in non-linear binary response models. [[HTML](https://raw.githack.com/argafacu/Advanced-Metrics-slides/master/lectures/07-probit/07-probit.html)]
 
 Lecture 8: Intro to Statistical (or *Machine*) Learning 1: the bias-variance-tradeoff, taxonomy of methods, parametric vs non-parametric, linear vs nonlinear, relationship between variance, bias and MSE [[HTML](https://raw.githack.com/ScPoEcon/Advanced-Metrics-slides/master/lectures/08-learning/08-learning.html)]
 
