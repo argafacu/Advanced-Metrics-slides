@@ -167,7 +167,7 @@ Remember the data generating process (DGP): `$$Y = f(X) + \epsilon$$`
 `\(E[Y - \hat{Y}]^2\)`: Similar to *mean squared residuals*!
 
 * One can easily show that that this factors as
-`$$\begin{align}E&amp;[f(X) + \epsilon - \hat{f}(X)]^2 =\\&amp;[\underbrace{f(X) -\hat{f}(X)}_{\text{Reducible}}]^2 + \underbrace{Var(\epsilon)}_{\text{Irreducible}}\end{align}$$`
+`$$\begin{align}E&amp;[f(X) + \epsilon - \hat{f}(X)]^2 =\\E&amp;[\underbrace{f(X) -\hat{f}(X)}_{\text{Reducible}}]^2 + \underbrace{Var(\epsilon)}_{\text{Irreducible}}\end{align}$$`
 
 ]
 
@@ -364,7 +364,7 @@ class: separator, middle
 
 * Parameters which guide choices like that are called **tuning parameters**.
 
-* As `\(\hat{f}\)` becomes too variable, we say there is **overfitting**: The model tries too hard to fit patterns in the data, which are **not** part of the true `\(f\)`! 
+* As `\(\hat{f}\)` becomes too variable, we say there is **overfitting**: The model tries too hard to fit patterns in the data, which are **not** part of the true `\(f\)` and are just **sample noise**! 
 
 ]
 
@@ -581,7 +581,7 @@ class: separator, middle
 
 * As soon as we start **overfitting** the data points, though, the test error starts to increase again!
 
-* At very high flexibility, our method tries to fit patterns in the data which are *not* part of the true `\(f\)` (the black line)!
+* At very high flexibility, our method tries to fit patterns in the data which are *not* part of the true `\(f\)` (the black line). Those patterns are coming from pure sample noise!
 
 * To make matters worse, the extent of this phenomenon will depend on the shape of the underlying **true** `\(f\)`!
 
@@ -705,8 +705,8 @@ background-position: 9% 19%
 
 |                                                                                                            |                                   |
 | :--------------------------------------------------------------------------------------------------------- | :-------------------------------- |
-| &lt;a href="mailto:florian.oswald@sciencespo.fr"&gt;.ScPored[&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;]               | florian.oswald@sciencespo.fr       |
-| &lt;a href="https://github.com/ScPoEcon/Advanced-Metrics-slides"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Slides |
+| &lt;a href="mailto:facundo.arganaraz@sciencespo.fr"&gt;.ScPored[&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;]               | facundo.arganaraz@sciencespo.fr       |
+| &lt;a href="https://github.com/argafacu/Advanced-Metrics-slides"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Slides |
 | &lt;a href="https://scpoecon.github.io/ScPoEconometrics"&gt;.ScPored[&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;] | Book |
 | &lt;a href="http://twitter.com/ScPoEcon"&gt;.ScPored[&lt;i class="fa fa-twitter fa-fw"&gt;&lt;/i&gt;]                          | @ScPoEcon                         |
 | &lt;a href="http://github.com/ScPoEcon"&gt;.ScPored[&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;]                          | @ScPoEcon                       |
